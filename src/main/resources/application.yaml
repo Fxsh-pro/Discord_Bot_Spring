@@ -1,3 +1,6 @@
+server:
+  port: 8090
+
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -9,7 +12,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: none
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
@@ -17,5 +20,5 @@ spring:
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
 
-server:
-  port: 8123
+bot:
+  token: "MTE0MzQ4OTY5NDcwMTcyMzY3MA.GZCF73.t5MZsRlyMgKEIL0KcYmFkPZokinA6CaXmTTLQI"
