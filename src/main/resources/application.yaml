@@ -1,15 +1,19 @@
+server:
+  port: 8080
+
 spring:
   datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:password}
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/postgres
-    username: user
-    password: password
+
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: none
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
@@ -17,5 +21,5 @@ spring:
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
 
-server:
-  port: 8123
+bot:
+  token: "MTE0MzQ4OTY5NDcwMTcyMzY3MA.GEZ8Q0.iWFnb-6C_wH5LOVIiHg2HYGKQtAm_5Wp-Nt1aw"
