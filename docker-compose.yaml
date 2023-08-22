@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    image: postgres:13.3
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+    ports:
+      - '5432:5432'
+  app:
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+    links:
+        - "db:db"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  
+# version: '3'
+# services:
+#   master_postgres:
+#     image: postgres:13.3
+#     environment:
+#       - POSTGRES_USER=user
+#       - POSTGRES_PASSWORD=password
+#       - POSTGRES_DB=postgres
+#     ports:
+#       - '5433:5432'
+
+
