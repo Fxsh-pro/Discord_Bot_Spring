@@ -12,5 +12,6 @@
 - Spring Boot: Main framework
 - PostgreSQL: Main relational database
 - Liquibase: Database schema migrations
+- Hibernate
 - Gradle: Build tool
 - Docker
